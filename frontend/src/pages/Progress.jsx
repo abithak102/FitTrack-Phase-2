@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import "./Progress.css";
+import ProgressComparison from "./ProgressComparison";
 
 
 function Progress() {
@@ -133,7 +134,12 @@ function Progress() {
             })}
           </div>
         )}
-      </section>
+            </section>
+
+      {/* WEEKLY AND MONTHLY COMPARISON */}
+
+      <ProgressComparison />
+
     </div>
   );
 }

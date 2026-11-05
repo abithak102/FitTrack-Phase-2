@@ -8,6 +8,11 @@ import Goals from "./pages/Goals";
 import Analytics from "./pages/Analytics";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import WorkoutPlans from "./pages/WorkoutPlans";
+import Exercises from "./pages/Exercises";
+import Streaks from "./pages/Streaks";
+import Badges from "./pages/Badges";
+import DashboardOverview from "./pages/DashboardOverview";
 import "./Dashboard.css";
 
 const API = "http://127.0.0.1:8000";
@@ -285,6 +290,7 @@ try {
         <p className="subtitle">
           Your fitness journey starts here.
         </p>
+        <DashboardOverview />
 
         <div className="profile-card">
           <h2>My Profile</h2>
@@ -295,40 +301,69 @@ try {
 
         <h2 className="section-title">My Fitness Dashboard</h2>
 
-        <div className="dashboard-grid">
-          <Link to="/workouts" className="feature-card">
-  <span>🏋️</span>
-  <h3>Workouts</h3>
-  <p>Manage your daily workouts.</p>
-</Link>
-          <Link to="/progress" className="feature-card">
-  <span>📊</span>
-  <h3>Progress</h3>
-  <p>Track your fitness progress.</p>
-</Link>
+        
+<div className="dashboard-grid">
 
-          <Link to="/goals" className="feature-card">
-  <span>🎯</span>
-  <h3>Goals</h3>
-  <p>Set and track your fitness goals.</p>
-</Link>
+  <Link to="/workouts" className="feature-card">
+    <span>💪</span>
+    <h3>Workouts</h3>
+    <p>Manage your daily workouts.</p>
+  </Link>
 
-          <Link to="/analytics" className="feature-card">
-  <span>📈</span>
-  <h3>Analytics</h3>
-  <p>View your fitness analytics and statistics.</p>
-</Link>
-<Link to="/profile" className="feature-card">
-  <span>👤</span>
-  <h3>My Profile</h3>
-  <p>View and update your account details.</p>
-</Link>
-<Link to="/notifications" className="feature-card">
-  <span>🔔</span>
-  <h3>Notifications</h3>
-  <p>View workout reminders and goal alerts.</p>
-</Link>
-        </div>
+  <Link to="/progress" className="feature-card">
+    <span>📊</span>
+    <h3>Progress</h3>
+    <p>Track your fitness progress.</p>
+  </Link>
+
+  <Link to="/workout-plans" className="feature-card">
+    <span>📅</span>
+    <h3>Workout Planner</h3>
+    <p>Schedule and manage your upcoming workouts.</p>
+  </Link>
+
+  <Link to="/exercises" className="feature-card">
+    <span>🏋️</span>
+    <h3>Exercise Library</h3>
+    <p>Browse, search and manage exercises.</p>
+  </Link>
+
+  <Link to="/goals" className="feature-card">
+    <span>🎯</span>
+    <h3>Goals</h3>
+    <p>Set and track your fitness goals.</p>
+  </Link>
+
+  <Link to="/analytics" className="feature-card">
+    <span>📈</span>
+    <h3>Analytics</h3>
+    <p>View your fitness analytics and statistics.</p>
+  </Link>
+
+  <Link to="/profile" className="feature-card">
+    <span>👤</span>
+    <h3>My Profile</h3>
+    <p>View and update your account details.</p>
+  </Link>
+
+  <Link to="/notifications" className="feature-card">
+    <span>🔔</span>
+    <h3>Notifications</h3>
+    <p>View workout reminders and goal alerts.</p>
+  </Link>
+
+  <Link to="/streaks" className="feature-card">
+    <span>🔥</span>
+    <h3>Workout Streaks</h3>
+    <p>Track your current and longest workout streaks.</p>
+  </Link>
+  <Link to="/badges" className="feature-card">
+    <span>🏆</span>
+    <h3>Achievement Badges</h3>
+    <p>View your earned badges and fitness achievements.</p>
+  </Link>
+
+</div>
       </main>
     </div>
   );
@@ -395,6 +430,38 @@ function App() {
   element={
     <ProtectedRoute>
       <Notifications />
+    </ProtectedRoute>
+  }
+/>
+      <Route
+        path="/workout-plans"
+        element={
+          <ProtectedRoute>
+            <WorkoutPlans />
+          </ProtectedRoute>
+        }
+      />
+<Route
+  path="/exercises"
+  element={
+    <ProtectedRoute>
+      <Exercises />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/streaks"
+  element={
+    <ProtectedRoute>
+      <Streaks />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/badges"
+  element={
+    <ProtectedRoute>
+      <Badges />
     </ProtectedRoute>
   }
 />

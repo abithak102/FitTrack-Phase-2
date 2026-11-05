@@ -1,0 +1,148 @@
+/* PROGRESS COMPARISON */
+
+.comparison-section {
+  margin-top: 30px;
+}
+
+.comparison-section > h2 {
+  color: #14532d;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.comparison-card {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.comparison-card h3 {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.comparison-current {
+  color: #14532d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.comparison-previous {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.comparison-change {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.comparison-positive {
+  color: #15803d;
+}
+
+.comparison-negative {
+  color: #dc2626;
+}
+
+.comparison-neutral {
+  color: #6b7280;
+}
+
+.trend-section {
+  margin-top: 30px;
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.trend-section h2 {
+  color: #14532d;
+  margin-bottom: 20px;
+}
+
+.trend-list {
+  display: grid;
+  gap: 15px;
+}
+
+.trend-item {
+  display: grid;
+  grid-template-columns: 110px 1fr 100px;
+  align-items: center;
+  gap: 15px;
+}
+
+.trend-date {
+  color: #374151;
+  font-size: 13px;
+}
+
+.trend-bar {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.trend-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #4ade80);
+  border-radius: 20px;
+}
+
+.trend-value {
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.comparison-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.comparison-empty {
+  color: #6b7280;
+  padding: 15px 0;
+}
+
+@media (max-width: 900px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-section {
+    padding: 18px;
+  }
+
+  .trend-item {
+    grid-template-columns: 85px 1fr;
+  }
+
+  .trend-value {
+    grid-column: 2;
+  }
+}
